@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #111;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.heart{
+   height: 70px;
+   width: 70px;
+   background-color: rgb(3, 2, 2);
+   transform: rotate(-45deg);
+   position: relative;
+   /* box-shadow: -10px 20px 90px red; */
+   animation: after 2s infinite;
+   left: 28.5% ;
+   z-index: 1;
+}
+.heart::before{
+    height: 70px;
+    width: 70px;
+    background-color:rgb(3, 2, 2);
+    top: -50%;
+    position: absolute;
+    border-radius: 50px;
+    content: '';
+}
+.heart::after{
+    height: 70px;
+    width: 70px;
+    background-color:rgb(3, 2, 2);
+    position: absolute;
+    border-radius: 50px;
+    right: -50%;
+    content: '';
+}
+@keyframes after {
+    0%{
+      transform: rotate(-45deg) scale(1.09);  
+    }
+    80%{
+        transform: rotate(-45deg) scale(1.0);      
+    }
+    100%{
+        transform: rotate(-45deg) scale(1.02);  
+    }
+
+}
+
+.circle{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    animation: before 2s linear infinite;
+    border: 2px solid blue;
+    left:19.5% ;
+    position: relative;
+    
+}
+@keyframes before {
+ from{
+    transform: rotate(0);
+ }  
+  to{
+transform: rotate(360);
+background-color: blue;
+ }
+}
+.seq{
+  height: 500px;
+  width: 500px;
+  background-color: cyan;
+}
+@media (max-width:768px) {
+    .circle {
+        height: 144px;
+        width: 365px;
+        border-radius: 50%;
+        animation: before 2s linear infinite;
+        border: 2px solid blue;
+        left: 45.5%;
+        position: relative;
+    }
+}
+.heart {
+    height: 37px;
+    width: 88px;
+    background-color: rgb(3, 2, 2);
+    transform: rotate(-45deg);
+    position: relative;
+    /* box-shadow: -10px 20px 90px red; */
+    animation: after 2s infinite;
+    left: 68.5%;
+    z-index: 1;
+}
